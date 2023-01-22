@@ -101,10 +101,10 @@ public class UserController {
         return ResponseEntity.ok().body(usuarioService.getAllUsers());
     }
 
-    @PostMapping(path = "/usuario")
-    public ResponseEntity<Users> createUser(@RequestBody Users users) {
-        return new ResponseEntity<>(usuarioService.createUser(users), HttpStatus.CREATED);
-    }
+    //@PostMapping(path = "/usuario")
+    // public ResponseEntity<Users> createUser(@RequestBody Users users) {
+    //    return new ResponseEntity<>(usuarioService.createUser(users), HttpStatus.CREATED);
+    //}
 
     @GetMapping(path = "/usuario/{id}")
     public ResponseEntity<Users> getUserById(@RequestBody Long id) {
