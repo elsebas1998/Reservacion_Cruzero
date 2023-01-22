@@ -1,0 +1,29 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ApiSql
+          uri: lb://API-SQL
+          predicates:
+            - Path=/apiSQL/**
+        - id: ApiNoSql
+          uri: lb://API-NOSQL
+          predicates:
+            - Path=/apiNoSQL/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+
+
